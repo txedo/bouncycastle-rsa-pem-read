@@ -1,3 +1,5 @@
+package me.txedo.security;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.security.KeyFactory;
@@ -9,8 +11,6 @@ import java.security.Security;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
-
-import me.txedo.security.PemFile;
 
 import org.apache.log4j.Logger;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
@@ -38,15 +38,13 @@ public class Main {
 		} catch (InvalidKeySpecException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	private static PrivateKey generatePrivateKey(KeyFactory factory, String filename)
 			throws InvalidKeySpecException, FileNotFoundException, IOException {
 		PemFile pemFile = new PemFile(filename);
 		byte[] content = pemFile.getPemObject().getContent();
-		PKCS8EncodedKeySpec privKeySpec = new PKCS8EncodedKeySpec(
-				content);
+		PKCS8EncodedKeySpec privKeySpec = new PKCS8EncodedKeySpec(content);
 		return factory.generatePrivate(privKeySpec);
 	}
 	
@@ -54,10 +52,8 @@ public class Main {
 			throws InvalidKeySpecException, FileNotFoundException, IOException {
 		PemFile pemFile = new PemFile(filename);
 		byte[] content = pemFile.getPemObject().getContent();
-		X509EncodedKeySpec pubKeySpec = new X509EncodedKeySpec(
-				content);
+		X509EncodedKeySpec pubKeySpec = new X509EncodedKeySpec(content);
 		return factory.generatePublic(pubKeySpec);
 	}
-
 
 }
