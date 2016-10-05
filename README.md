@@ -8,8 +8,8 @@ This project is a small tutorial to show how to **read RSA keys** from **PEM fil
 3. Select `File` > `Import...` > `Existing Maven Projects`, and follow the steps.
 
 #### Full tutorial and explanation
-To read the full tutorial and explanation, please visit [Read RSA keys from PEM files in Java][1] at [txedo.me][2].
+To read the full tutorial and explanation, please visit [Read RSA keys from PEM files in Java][1] at [txedo.com][2].
 
-  [1]: http://www.txedo.me/blog/java-read-rsa-keys-pem-file/
-  [2]: http://www.txedo.me
+  [1]: https://www.txedo.com/blog/java-read-rsa-keys-pem-file/
+  [2]: https://www.txedo.com
   
